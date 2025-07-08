@@ -9,7 +9,11 @@ interface PokemonListProps {
   lastElementRef?: (node: HTMLDivElement) => void;
 }
 
-export default function PokemonList({ pokemonList, loading, lastElementRef }: PokemonListProps) {
+export default function PokemonList({
+  pokemonList,
+  loading,
+  lastElementRef,
+}: PokemonListProps) {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
@@ -22,28 +26,23 @@ export default function PokemonList({ pokemonList, loading, lastElementRef }: Po
     return (
       <div className="text-center py-20">
         <div className="text-6xl mb-4">🔍</div>
-        <h3 className="text-xl font-semibold text-gray-800 mb-2">No Pokémon found</h3>
-        <p className="text-gray-600">Try adjusting your search terms</p>
+        <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">No Pokémon found</h3>
+        <p className="text-gray-600 text-sm sm:text-base">Try adjusting your search terms</p>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
-      {/* Simple header */}
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-gray-600">
-          Showing {pokemonList.length} Pokémon
-        </p>
-      </div>
-
-      {/* Clean grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+    <div className="space-y-6 px-4 sm:px-6 md:px-8">
+      {/* Header */}
+    
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {pokemonList.map((pokemon, index) => (
           <div
             key={pokemon.id}
             ref={index === pokemonList.length - 1 ? lastElementRef : null}
-            className="transform transition-all duration-200 hover:scale-105"
+            className="transform transition-transform duration-200 hover:scale-[1.03]"
           >
             <PokemonCard pokemon={pokemon} />
           </div>
