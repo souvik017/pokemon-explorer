@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pokemon Explorer
 
-## Getting Started
+Explore the world of Pokemon with this Next.js application! Search, discover, and learn about your favorite Pokemon with a modern and engaging user interface.
 
-First, run the development server:
+## Features and Functionality
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+*   **Browse a vast Pokedex:** Explore a comprehensive list of Pokemon, fetching data from the PokeAPI.
+*   **Lightning-Fast Search:** Quickly find Pokemon by name with a debounced search functionality.
+*   **Detailed Pokemon Pages:**  Access individual pages with information about abilities, stats, moves, and more.
+*   **Optimized Performance:** Benefit from caching, request deduplication, and batch fetching for a smooth user experience.
+*   **Modern UI:**  Enjoy a visually appealing interface with animated backgrounds, glassmorphism effects, and subtle hover animations, built with Tailwind CSS.
+*   **Error Handling:**  Graceful handling of API errors and informative error messages.
+*   **Infinite Scrolling:**  Dynamically load more Pokemon as you scroll, providing a seamless browsing experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technology Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+*   **Next.js:** React framework for building performant and SEO-friendly web applications.
+*   **React:** JavaScript library for building user interfaces.
+*   **Tailwind CSS:** Utility-first CSS framework for rapid UI development.
+*   **PokeAPI:**  RESTful API providing Pokemon data.
+*   **Axios:**  HTTP client for making API requests.
+*   **TypeScript:**  Superset of JavaScript that adds static typing.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Prerequisites
 
-## Learn More
+*   Node.js (version 18 or higher)
+*   npm or yarn
 
-To learn more about Next.js, take a look at the following resources:
+## Installation Instructions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  Clone the repository:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    ```bash
+    git clone https://github.com/souvik017/pokemon-explorer.git
+    ```
 
-## Deploy on Vercel
+2.  Navigate to the project directory:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    cd pokemon-explorer
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3.  Install dependencies:
+
+    ```bash
+    npm install  # or yarn install
+    ```
+
+## Usage Guide
+
+1.  Start the development server:
+
+    ```bash
+    npm run dev # or yarn dev
+    ```
+
+2.  Open your browser and navigate to `http://localhost:3000`.
+
+3.  Use the search bar to find specific Pokemon.
+
+4.  Scroll down to load more Pokemon.
+
+5.  Click on a Pokemon card to view its detailed information.
+
+## API Documentation
+
+This project utilizes the PokeAPI ([https://pokeapi.co/](https://pokeapi.co/)). The following endpoints are used:
+
+*   `GET /api/v2/pokemon?limit={limit}`: Fetches a list of Pokemon with the specified limit.  Used in `lib/pokemonApi.ts` within the `fetchPokemonList` function.
+
+*   `GET /api/v2/pokemon/{nameOrId}`: Fetches detailed information for a specific Pokemon (by name or ID). Used in `lib/pokemonApi.ts` within the `fetchPokemonDetails` function.
+
+The `lib/pokemonApi.ts` file contains helper functions for interacting with the PokeAPI, including caching mechanisms and error handling.
+
+## Contributing Guidelines
+
+Contributions are welcome! Here's how you can contribute:
+
+1.  Fork the repository.
+2.  Create a new branch for your feature or bug fix:
+
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+
+3.  Make your changes and commit them with descriptive commit messages.
+4.  Push your changes to your forked repository.
+5.  Create a pull request to the `main` branch of the original repository.
+
+Please ensure your code adheres to the project's coding style and includes appropriate tests.
+
+## License Information
+
+No license specified.  All rights reserved.
+
+## Contact/Support Information
+
+For questions or support, please contact the repository owner through GitHub.
