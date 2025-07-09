@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { fetchPokemonDetails } from '../../../lib/pokemonApi';
 import { formatPokemonData, FormattedPokemon, PokemonTypes } from '../../../types/pokemon';
+import { NextPage } from 'next';
 
 interface PokemonDetailPageProps {
   params: {
@@ -11,7 +12,7 @@ interface PokemonDetailPageProps {
   };
 }
 
-export default function PokemonDetailPage({ params }: PokemonDetailPageProps) {
+const PokemonDetailPage: NextPage<PokemonDetailPageProps> = ({ params }) => {
   const [pokemon, setPokemon] = useState<FormattedPokemon | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -256,3 +257,5 @@ export default function PokemonDetailPage({ params }: PokemonDetailPageProps) {
     </div>
   );
 }
+
+export default PokemonDetailPage;

@@ -1,7 +1,29 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  transpilePackages: ['@types'], // Helps with type imports
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: false, // Set to true only if needed temporarily
+  },
+  // If using the Pages Router (pages directory)
+  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
+  // If using the App Router (app directory)
+  // experimental: {
+  //   appDir: true,
+  // },
+  async redirects() {
+    return [
+      {
+        source: '/pokemon',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+export default nextConfig
