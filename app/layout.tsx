@@ -26,7 +26,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           {/* Modern glassmorphism header */}
           <header className="relative">
             <div className="absolute inset-0 bg-white/10 backdrop-blur-md border-b border-white/20"></div>
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
               <div className="flex justify-center items-center h-20">
                 <div className="group cursor-pointer">
                   <h1 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 via-red-500 to-purple-600 bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105">
@@ -39,7 +39,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </header>
 
           {/* Main content with glassmorphism container */}
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <main className="max-w-7xl mx-auto px-1 sm:px-6 lg:px-8 py-12">
             <div className="bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl p-8 transition-all duration-300 hover:bg-white/15 hover:shadow-3xl">
               {children}
             </div>

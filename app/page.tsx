@@ -167,7 +167,7 @@ export default function HomePage() {
   }
 
   return (
-    <div className="px-4 sm:px-6 lg:px-24 py-8 space-y-12">
+    <div className="px-0 sm:px-6 lg:px-24 py-8 space-y-12">
       {/* Hero Section */}
       <div className="relative text-center">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
